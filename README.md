@@ -18,7 +18,7 @@ apt install curl -y
 
 v2-ui安装命令：
 ===============================================================================================
-**bash <(curl -Ls https://raw.githubusercontent.com/tszho-t/v2-ui/master/v2-ui.sh)**
+**bash <(curl -Ls https://raw.githubusercontent.com/tszho-t/v2ui/master/v2-ui.sh)**
 ===============================================================================================
 .
 .
