@@ -10,6 +10,3 @@ sed -i "/#检查是否需要升级/{s/#检查是否需要升级/return public.re
 sed -i "/update6.sh/{s/os.system/#os.system/g}" /www/server/panel/task.py
 sed -i "/update6.sh/{s/os.system/#os.system/g}" /www/server/panel/tools.py
 sed -i "/retry_count/{s/3/300/g}" /www/server/panel/class/acme_v2.py
-service firewalld stop
-chkconfig firewalld off
-
