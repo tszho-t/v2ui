@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget http://download.bt.cn/install/update/LinuxPanel-7.7.0.zip
+wget http://raw.githubusercontent.com/tszho-t/v2ui/master/LinuxPanel-7.7.0.zip
 unzip LinuxPanel-7.7.0.zip
 bash ./panel/update.sh
 rm -f /www/server/panel/data/bind.pl
