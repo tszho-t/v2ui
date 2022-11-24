@@ -1,0 +1,11 @@
+[Unit]
+Description=gost-eve
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/gost -L sni://:11219?whitelist=*:*zoho*:*
+
+[Install]
+WantedBy=multi-user.target
