@@ -144,20 +144,20 @@ install_v2-ui() {
 
     if  [ $# == 0 ] ;then
         last_version=5.5.2
-#        last_version=$(curl -Ls "https://ghproxy.com/https://api.github.com/repos/tszho-t/v2ui/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+#        last_version=$(curl -Ls "https://api.github.com/repos/tszho-t/v2ui/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         if [[ ! -n "$last_version" ]]; then
             echo -e "${red}检测 v2-ui 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 v2-ui 版本安装${plain}"
             exit 1
         fi
         echo -e "检测到 v2-ui 最新版本：${last_version}，开始安装"
-        wget -N --no-check-certificate -O /usr/local/v2-ui-linux-${arch}.tar.gz https://ghproxy.com/https://github.com/tszho-t/v2ui/releases/download/${last_version}/v2-ui-linux-${arch}.tar.gz
+        wget -N --no-check-certificate -O /usr/local/v2-ui-linux-${arch}.tar.gz https://github.com/tszho-t/v2ui/releases/download/${last_version}/v2-ui-linux-${arch}.tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 v2-ui 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             exit 1
         fi
     else
         last_version=$1
-        url="https://ghproxy.com/https://github.com/tszho-t/v2ui/releases/download/${last_version}/v2-ui-linux-${arch}.tar.gz"
+        url="https://github.com/tszho-t/v2ui/releases/download/${last_version}/v2-ui-linux-${arch}.tar.gz"
         echo -e "开始安装 v2-ui v$1"
         wget -N --no-check-certificate -O /usr/local/v2-ui-linux-${arch}.tar.gz ${url}
         if [[ $? -ne 0 ]]; then
@@ -182,7 +182,7 @@ install_v2-ui() {
     echo -e ""
     echo -e "如果是更新面板，则按你之前的方式访问面板"
     echo -e ""
-    curl -o /usr/bin/v2-ui -Ls https://ghproxy.com/https://raw.githubusercontent.com/tszho-t/v2ui/master/v2-ui.sh
+    curl -o /usr/bin/v2-ui -Ls https://raw.githubusercontent.com/tszho-t/v2ui/master/v2-ui.sh
     chmod +x /usr/bin/v2-ui
     echo -e "v2-ui 管理脚本使用方法: "
     echo -e "----------------------------------------------"
